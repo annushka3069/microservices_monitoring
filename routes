@@ -1,0 +1,80 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+# Monitoring API
+
+
+
+#------------------------------------->Routes de Gestion des Machines<------------------------------------ 
+
+GET   /listerMachines                         @controllers.NCFMonitoringController.listerMachines()
+
+
+GET   /logsMachines							  @controllers.NCFMonitoringController.logsMachines()
+
+
+GET   /etatCluster                 			  @controllers.NCFMonitoringController.etatCluster()
+
+
+#------------------------------------------------>Routes des Services<-------------------------------------------------
+
+
+GET   /loadService/:nomservice  			 @controllers.NCFMonitoringController.loadService(nomservice)			
+
+
+GET   /startService/:nomservice		         @controllers.NCFMonitoringController.startService(nomservice)
+
+
+GET   /statusService/:nomservice	         @controllers.NCFMonitoringController.statusService(nomservice)
+
+
+GET   /statusServices           	         @controllers.NCFMonitoringController.statusServices()
+
+
+GET   /statusServiceMachine/:nomservice/:machineId      @controllers.NCFMonitoringController.statusServicesMachine(nomservice, machineId)
+
+
+GET   /stopService/:nomservice 				 @controllers.NCFMonitoringController.stopService(nomservice)
+
+
+GET   /deleteService/:nomservice	         @controllers.NCFMonitoringController.deleteService(nomservice)		
+
+
+GET   /listerServices   				     @controllers.NCFMonitoringController.listerServices()	
+
+
+PUT   /creerService/:nomservice        		 @controllers.NCFMonitoringController.creerService(nomservice)
+
+
+GET   /afficherService/:nomservice           @controllers.NCFMonitoringController.afficherService(nomservice)
+
+
+
+#------------------------------------------------>Routes des Conteneurs<-------------------------------------------------
+
+
+GET   /listerConteneurs							  @controllers.NCFMonitoringController.listerConteneurs()	
+
+
+GET   /adresseConteneur/:idConteneur/:hostname    @controllers.NCFMonitoringController.adresseConteneur(idConteneur, hostname)
+
+
+GET   /configConteneur/:idConteneur/:hostname  	  @controllers.NCFMonitoringController.configConteneur(idConteneur, hostname)
+
+
+GET   /logsConteneur/:idConteneur/:hostname  	  @controllers.NCFMonitoringController.logsConteneur(idConteneur, hostname)
+
+
+#----------------------------------------- >Routes des Services Secondaires<-------------------------------------------------
+
+
+GET    /statusServiceSec/:serviceSec   				      @controllers.NCFMonitoringController.statusServiceSec(serviceSec)
+
+
+GET   /skydnsPerformances 								  @controllers.NCFMonitoringController.skydnsperforms()
+
+
+GET   /replicasetStatus									  @controllers.NCFMonitoringController.TODO	
+
